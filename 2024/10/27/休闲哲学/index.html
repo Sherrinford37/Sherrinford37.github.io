@@ -1,0 +1,251 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>休闲哲学 | 彼岸花庭</title>
+    <meta name="author" content="墨黎" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
+    <link rel="icon" href="/images/Acheron.jpg" />
+    <link rel="preconnect" href="https://s4.zstatic.net" />
+<script src="https://s4.zstatic.net/ajax/libs/vue/3.3.7/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+<link rel="preconnect" href="https://fonts.googleapis.cn" />
+<link rel="preconnect" href="https://fonts.gstatic.cn" crossorigin />
+<link
+    rel="stylesheet"
+    href="https://fonts.googleapis.cn/css2?family=Fira+Code:wght@400;500;600;700&family=Lexend:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;600;700;800;900&display=swap"
+/>
+<script> const mixins = {}; </script>
+
+<script src="https://polyfill.alicdn.com/v3/polyfill.min.js?features=default"></script>
+
+
+<script src="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://s4.zstatic.net/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+<link
+    rel="stylesheet"
+    href="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/styles/github.min.css"
+/>
+<script src="/js/lib/highlight.js"></script>
+
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.css" />
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+<body>
+    <div id="layout">
+        <transition name="fade">
+            <div id="loading" v-show="loading">
+                <div id="loading-circle">
+                    <h2>LOADING</h2>
+                    <p>加载过慢请开启缓存 浏览器默认开启</p>
+                    <img src="/images/loading.gif" />
+                </div>
+            </div>
+        </transition>
+        <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <nav id="desktop-menu">
+        <a class="title" href="/">
+            <span>彼岸花庭</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;Home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;About</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;Archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;Categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;Tags</span>
+        </a>
+        
+    </nav>
+    <nav id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;彼岸花庭</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Home</div>
+                    </div>
+                </a>
+                
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">About</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Archives</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Categories</div>
+                    </div>
+                </a>
+                
+                <a href="/tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Tags</div>
+                    </div>
+                </a>
+                
+            </div>
+        </transition>
+    </nav>
+</div>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+
+        <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
+            <div class="article">
+    <div>
+        <h1>休闲哲学</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2024/10/27
+        </span>
+        
+        
+        <span class="tags">
+            <span class="icon">
+                <i class="fa-solid fa-tags fa-fw"></i>
+            </span>
+            
+            
+            <span class="tag">
+                
+                <a href="/tags/%E6%88%91%E7%9A%84%E6%80%9D%E8%80%83%E8%AE%B0%E5%BD%95/" style="color: #ff7d73">
+                    我的思考记录
+                </a>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/%E6%B8%B8%E6%88%8F/" style="color: #00bcd4">
+                    游戏
+                </a>
+            </span>
+            
+        </span>
+        
+    </div>
+    
+    <div class="content" v-pre>
+        <p>当下流行的艺术门类有许多，其中的游戏可包揽其他各门艺术，也是许多年轻人的娱乐方式之一。我一直认为玩游戏要有所获，若纯属消磨时间和满足快感欲，那么游戏就不值得玩。一款「好游戏」，若不论其仅为存活于市场而做的或博眼球或低俗等的部分，那它也是颇具艺术内涵有待玩家发掘的。</p>
+<span id="more"></span>
+<p>通过流行的艺术娱乐形式传递知识与思想，我想这样做是最高效，最普适的，也是十分利于记忆的，因此，我想到了这样一种哲学，休闲哲学，让人们在休闲娱乐中也能学习的哲学，它的核心组成为休闲&#x2F;学习者，娱乐客体和逸者讲师，此三者也是个人由休闲获得知识的广度和深度的影响因素，这里虽以“哲学”命名，但它可以是任何领域的知识，专业或通俗取决于客体内容和逸者讲师，主动或被动接受这事可真不好说。（我大概是疯了&#x2F;太闲了，竟妄想赋予娱乐以知识价值&#x2F;意义）</p>
+<p>通过好游戏，我收获了许多。在我心目中，《崩坏:星穹铁道》就是如此这般的好游戏。我想在此记录一下我所摘取的剧情片段为我带来的感想思考：黄泉，忘川河畔的守望者，虚无路上的返渡人，在以卡冈图雅黑洞为可视景象和以黑色沼河为比喻的虚无之路上，她同自我，同误触虚无之人探讨经典哲学问题，叩问意义，引导堕入者重拾意义，虽然“「虚无」平等地笼罩着每个人”，但“也正因如此，它没有意义”，由虚无引出的任何主义和实践都是不值得倾向的。所谓命运，是出于“自私的本能”要与之抗争却不明意义的“灌铅的骰子”“命定的归宿”，还是能够因人的作为而“展现截然不同的意义”的“结局”的流转的业力或实践？黄泉为拯救匹诺康尼精神沉死于幻梦的人们，以强大力量斩断虚无沼河释放死亡——唯有直面虚无或死亡，我们才能真正意识到自我意志的存在——那段剧情令我深受震撼，我由此第一次现实地感受到虚无的恐怖与压迫，然而随后她的绝妙比喻更是使我热泪盈眶，存在与意义向我昭示并从内心涌现，“倘若「虚无」是生命最原始的恐惧与颤栗，任何一种崇高的信念在祂庞然的阴影下都显得微不足道，那么在这道影子的背后，也一定存在着世间最猛烈的光源。正如每一个迈向死亡的生命都在热烈的生长，向着「虚无」的尽头——我们追逐那最初的光。”。通过游戏考据up，我又找到了诸多艺术原作和相关哲学家与其观点。我想「休闲哲学」就体现于此吧。</p>
+<p>最后另附：</p>
+<p>——敬 雷电·忘川守·芽衣</p>
+<hr>
+<p>date: 2025-01-07</p>
+<p>考据回来补充：所说的虚无沼河场景实为冥河，古希腊神话中人死后要渡冥河到彼岸，若无摆渡人帮助则会苦苦挣扎于冥河，到彼岸后接受冥界三判官审判，若有罪则去地狱，若无罪则去乐土。日本神话的忘川和中国神话的黄泉与此相似，该角色综合了三者，大致对应摆渡人。</p>
+
+    </div>
+    
+    
+    
+    
+    
+    
+    
+</div>
+
+            <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2022 - 2025 彼岸花庭
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;墨黎
+        </div>
+        <div>
+            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a>
+        </div>
+        
+    </div>
+</footer>
+
+        </div>
+        
+        <transition name="fade">
+            <div id="preview" ref="preview" v-show="previewShow">
+                <img id="preview-content" ref="previewContent" />
+            </div>
+        </transition>
+        
+    </div>
+    <script src="/js/main.js"></script>
+    
+    
+
+
+
+
+    
+</body>
+</html>
